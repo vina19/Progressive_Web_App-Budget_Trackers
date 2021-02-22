@@ -22,8 +22,14 @@ request.onsuccess = function(event) {
 
     // Check if app is online before reading from db.
     if (navigator.onLine) {
-
         // Calling the checkDatabase function.
         checkDatabase();
     };
 };
+
+// Error method handler if the request caused the error
+request.onerror = function(event) {
+    // log the error message
+    console.log("Error occured:" + event.target.errorCode);
+};
+
